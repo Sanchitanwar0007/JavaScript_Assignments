@@ -16,7 +16,6 @@ async function getapi(url) {
             false_arr.push(data[i]);
         }
     }
-    try{
     true_btn.addEventListener("click",()=>{
         let count=0;
         var html="<table border='1|1'>";
@@ -27,7 +26,6 @@ async function getapi(url) {
 
             html+="<td>"+count+"</td>";
             html+="<td>"+true_arr[i].userId+"</td>";
-            console.log("true_arr[i].userId");
             html+="<td>"+true_arr[i].id+"</td>";
             html+="<td>"+true_arr[i].title+"</td>";
             html+="<td style=background-color:#00FF00>"+true_arr[i].completed+"</td>";
@@ -36,13 +34,10 @@ async function getapi(url) {
         html+="</table>"
         class_name.innerHTML=html;
     });
-}catch(e){
-    console.log(e)
-}
+
 
     false_btn.addEventListener("click",()=>{
         let count2=0;
-        console.log("clicked buttong 2");
         var html="<table border='1|1' >";
         html+="<tr><th>Sr.No.</th><th>UserId</th><th>id</th><th>title</th><th>completed</th></tr>";
         for(var i=0;i<false_arr.length;i++){
