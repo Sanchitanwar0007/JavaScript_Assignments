@@ -1,3 +1,21 @@
+
+const div = document.getElementsByClassName('todos')[0];
+const addBtn = document.getElementsByTagName('button')[0];
+let inputField = document.getElementsByTagName('input')[0];
+var countToDo = 0
+addBtn.addEventListener('click',()=>{
+    let text = inputField.value;
+    let p = document.createElement('p');
+    p.setAttribute("key", countToDo);
+    p.textContent = text;
+    p.addEventListener("click",function(){remove(this)},false)
+    div.appendChild(p)
+    countToDo += 1
+})
+function remove(elem){
+    var element =elem
+    element.remove();
+}
 const api_url = "https://jsonplaceholder.typicode.com/todos";
 var true_btn=document.getElementsByTagName("button")[0];
 var false_btn=document.getElementsByTagName('button')[1];
@@ -56,4 +74,3 @@ async function getapi(url) {
 }
 
 getapi(api_url);
-
